@@ -1,0 +1,32 @@
+
+
+%container{
+    max-width: 1140px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+%section-header{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 0.673rem + 2.56vw, 2.5rem);
+    /* line-height: 49px; */ 
+    line-height: 120%;
+    background: radial-gradient(70.71% 70.71% at 50.00%  50.00%, rgb(255, 255, 255) 30.000001192092896%, rgb(255, 255, 255) 84.77022051811218%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+%paragraph{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.548rem + 0.9vw, 1.188rem);
+
+    /* line-height: 31px; */ 
+    line-height: 160%;
+    color: var(--grey);
+}

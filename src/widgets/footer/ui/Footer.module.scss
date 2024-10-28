@@ -1,0 +1,37 @@
+@import "../../../app/styles/index";
+.footer{
+    box-shadow: inset 0 3px 3px 0 #63e;
+    @media (max-width:480px) {
+        box-shadow: none;
+    }
+    .footerContainer{
+        @extend %container ;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        @media (max-width:576px) {
+            &{
+                gap: 16px;
+                flex-direction: column;
+                padding-bottom: 46px;
+                padding-top: 36px;
+                        }
+        }
+    }
+    .footerLeft{
+        @extend %paragraph;
+    }
+    .footerLinks{
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+
+        
+        .footerLink{
+            @extend %paragraph ;
+        }
+
+    }
+}

@@ -1,0 +1,25 @@
+.starText{
+           display: flex;
+        align-items: center;
+        gap: 9px;
+        .ideaWelcomeImg{
+
+        }
+        p:first-of-type, p{
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 12px;
+
+            /* line-height: 26px; */ 
+            line-height: 160%;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            background: linear-gradient(120deg, #627fff 6.96%, #865bff 95.58%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @media (max-width:360px) {
+                font-size: 9px;
+            }
+        }
+}
