@@ -1,3 +1,12 @@
+input,
+textarea,
+button,
+select,
+div,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
   --font-family: "Roboto", sans-serif;
   --second-family: "Poppins", sans-serif;
@@ -8,8 +17,8 @@
   --grey: #77798f;
 }
 
-.recent .container, .portfolios .container, .process .container, .idea .container {
-  max-width: 1140px;
+.reachable .container, .recent .container, .portfolios .container, .process .container, .idea .container {
+  max-width: 1180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,7 +28,7 @@
   padding-right: 20px;
 }
 
-.recent .recent__header, .portfolios .portfolios__header, .process .process__header .process__header-title {
+.reachable .reachable__header, .recent .recent__header, .portfolios .portfolios__header, .process .process__header .process__header-title {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(1.25rem, 0.673rem + 2.56vw, 2.5rem);
@@ -31,7 +40,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.portfolio .portfolio__description, .process .process__complete-wrapper .process__complete-description, .process .process__header .process__header-description, .idea .idea__description {
+.reachable .reachable__description, .portfolio .portfolio__description, .process .process__complete-wrapper .process__complete-description, .process .process__header .process__header-description, .idea .idea__description {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(0.75rem, 0.548rem + 0.9vw, 1.188rem);
@@ -608,6 +617,15 @@ template {
   display: none;
 }
 
+input,
+textarea,
+button,
+select,
+div,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
   --font-family: "Roboto", sans-serif;
   --second-family: "Poppins", sans-serif;
@@ -618,8 +636,8 @@ template {
   --grey: #77798f;
 }
 
-.recent .container, .portfolios .container, .process .container, .idea .container {
-  max-width: 1140px;
+.reachable .container, .recent .container, .portfolios .container, .process .container, .idea .container {
+  max-width: 1180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,7 +647,7 @@ template {
   padding-right: 20px;
 }
 
-.recent .recent__header, .portfolios .portfolios__header, .process .process__header .process__header-title {
+.reachable .reachable__header, .recent .recent__header, .portfolios .portfolios__header, .process .process__header .process__header-title {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(1.25rem, 0.673rem + 2.56vw, 2.5rem);
@@ -641,7 +659,7 @@ template {
   -webkit-text-fill-color: transparent;
 }
 
-.portfolio .portfolio__description, .process .process__complete-wrapper .process__complete-description, .process .process__header .process__header-description, .idea .idea__description {
+.reachable .reachable__description, .portfolio .portfolio__description, .process .process__complete-wrapper .process__complete-description, .process .process__header .process__header-description, .idea .idea__description {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(0.75rem, 0.548rem + 0.9vw, 1.188rem);
@@ -1352,6 +1370,15 @@ template {
   top: -102px;
 }
 
+input,
+textarea,
+button,
+select,
+div,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
   --font-family: "Roboto", sans-serif;
   --second-family: "Poppins", sans-serif;
@@ -1362,8 +1389,8 @@ template {
   --grey: #77798f;
 }
 
-.recent .container, .portfolios .container, .process .container, .idea .container {
-  max-width: 1140px;
+.reachable .container, .recent .container, .portfolios .container, .process .container, .idea .container {
+  max-width: 1180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1373,7 +1400,7 @@ template {
   padding-right: 20px;
 }
 
-.recent .recent__header, .portfolios .portfolios__header, .process .process__header .process__header-title {
+.reachable .reachable__header, .recent .recent__header, .portfolios .portfolios__header, .process .process__header .process__header-title {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(1.25rem, 0.673rem + 2.56vw, 2.5rem);
@@ -1385,7 +1412,7 @@ template {
   -webkit-text-fill-color: transparent;
 }
 
-.portfolio .portfolio__description, .process .process__complete-wrapper .process__complete-description, .process .process__header .process__header-description, .idea .idea__description {
+.reachable .reachable__description, .portfolio .portfolio__description, .process .process__complete-wrapper .process__complete-description, .process .process__header .process__header-description, .idea .idea__description {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(0.75rem, 0.548rem + 0.9vw, 1.188rem);
@@ -2305,4 +2332,136 @@ template {
   line-height: 120%;
   text-align: center;
   color: #fff;
+}
+
+.reachable {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 34px;
+}
+.reachable .container {
+  padding: clamp(2.5rem, -11.859rem + 22.44vw, 4.688rem);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 12px 60px 0 rgba(102, 77, 255, 0.1);
+          box-shadow: 0 12px 60px 0 rgba(102, 77, 255, 0.1);
+  background: #010314;
+  border-radius: 22px;
+  gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 768px) {
+  .reachable .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.reachable .reachable__left-part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (max-width: 576px) {
+  .reachable .reachable__left-part {
+    text-align: center;
+  }
+}
+.reachable .reachable__text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.reachable .reachable__description {
+  max-width: 560px;
+}
+.reachable .reachable__line {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 0.75px solid #182542;
+  width: 100%;
+  height: 0px;
+}
+.reachable .reachable__user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 21px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 576px) {
+  .reachable .reachable__user {
+    text-align: left;
+  }
+}
+.reachable .reachable__user-tblock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 6px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.reachable .reachable__user-header {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 21px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+@media (max-width: 576px) {
+  .reachable .reachable__user-header {
+    font-size: clamp(0.813rem, 0.188rem + 2.78vw, 1.188rem);
+  }
+}
+.reachable .reachable__user-description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  /* line-height: 19px; */
+  line-height: 160%;
+  color: #77798f;
+}
+.reachable .reachable__user-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 13px;
+}
+.reachable .reachable__image {
+  width: 100%;
+  max-width: 375px;
+}
+@media (max-width: 1180px) {
+  .reachable .reachable__image {
+    width: 38%;
+    height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .reachable .reachable__image {
+    width: 100%;
+    height: 100%;
+  }
 }

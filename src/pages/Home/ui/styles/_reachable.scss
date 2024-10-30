@@ -1,0 +1,99 @@
+.reachable{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 34px;
+    .container{
+        @extend %container;
+        padding: clamp(2.5rem, -11.859rem + 22.44vw, 4.688rem);
+        justify-content: space-between;
+        box-shadow: 0 12px 60px 0 rgba(102, 77, 255, 0.1);
+        background: #010314;
+        border-radius: 22px;
+        gap: 30px;
+        align-items: center;
+        
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
+    }
+    .reachable__left-part{
+        display: flex;
+        flex-direction: column;
+        @media (max-width:576px) {
+            text-align: center;
+        }
+    }
+    .reachable__text-block{
+        display: flex;
+        gap: 24px;
+        flex-direction: column
+    }
+    .reachable__header{
+        @extend %section-header;
+    }
+    .reachable__description{
+        @extend %paragraph;
+        max-width: 560px;
+    }
+    .reachable__line{
+        margin-top: 25px;
+        margin-bottom: 25px;
+        border: 0.75px solid #182542;
+        width: 100%;
+        height: 0px;
+    }
+    .reachable__user{
+        display: flex;
+        gap: 21px;
+        align-items: center;
+        @media (max-width:576px) {
+            text-align: left;
+        }
+    }
+    .reachable__user-image{
+        
+    }
+    .reachable__user-tblock{
+        display: flex;
+        gap:6px;
+        flex-direction: column;
+    }
+    .reachable__user-header{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 21px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff;
+        @media (max-width:576px) {
+            font-size: clamp(0.813rem, 0.188rem + 2.78vw, 1.188rem);
+        }
+    }
+    .reachable__user-description{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+
+        /* line-height: 19px; */ 
+        line-height: 160%;
+        color: #77798f;
+    }
+    .reachable__user-icons{
+        display: flex;
+        align-items: center;
+        gap: 13px;
+    }
+    .reachable__image{
+        width: 100%;
+        max-width: 375px;
+        @media (max-width:1180px) {
+            width: 38%;
+            height: 100%;
+        }
+        @media (max-width:768px) {
+            width: 100%;
+            
+            height: 100%;
+        }
+    }
+}

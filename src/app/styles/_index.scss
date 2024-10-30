@@ -1,4 +1,16 @@
+
+
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 @import "./variables";
 @import "./mixins";
 
 @import "../../../node_modules/scss-reset/reset";
+
+
