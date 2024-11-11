@@ -1,0 +1,50 @@
+@import "../../../../app/styles/index";
+.user-init{
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap:40px;
+    }
+    .user-init__header{
+        @extend %section-header;
+        margin-left: auto;
+        margin-right: auto;
+
+        }
+    .container{
+        @extend %container;
+        height: calc(100vh - 72px);
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        width: 100%;
+        max-width: 400px;
+    }
+    .submit{
+        margin-top: 20px;
+    }
+    .form-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 40px;
+        border: 1px solid white;
+        border-radius: 20px;
+    }
+    .user-init__helper{
+        @extend %paragraph;
+    }
+    .errorText{
+        @extend %paragraph;
+        margin-left: auto;
+        margin-right: auto;
+        color: red;
+    }
+
+    
+}

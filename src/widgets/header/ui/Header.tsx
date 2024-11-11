@@ -4,6 +4,9 @@ import { menuNavLinks } from "../../../shared/consts";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
 import LogButton from "../../../shared/ui/LogButton/LogButton";
+import HeaderLogos from "./HeaderLogos";
+import HeaderAuth from "./HeaderAuth";
+import MenuHeaderLogos from "./MenuHeaderLogos";
 export const Header = () => {
   const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
   return (
@@ -25,15 +28,8 @@ export const Header = () => {
               );
             })}
           </nav>
-
-          <div className={cl.headerLogos}>
-            <LogButton isShine={false} >
-            Sign in
-            </LogButton>
-            <LogButton  isShine={true} >
-            Sign up
-            </LogButton>
-          </div>
+          
+        <HeaderAuth />
         </div>
       </header>
 
@@ -47,14 +43,10 @@ export const Header = () => {
             );
           })}
         </nav>
-        <div className={[cl.headerLogos, cl.menuLogos].join(" ")}>
-          <LogButton isShine={false} >
-            Sign in
-            </LogButton>
-          <LogButton  isShine={true} >
-            Sign up
-          </LogButton>
-        </div>
+
+        
+        <MenuHeaderLogos />
+
       </div>
     </>
   );

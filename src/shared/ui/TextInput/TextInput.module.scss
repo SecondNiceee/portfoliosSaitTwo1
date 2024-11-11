@@ -1,0 +1,36 @@
+@import "../../../app/styles/_mixins.scss";
+.textInput{
+    border: 2.25px solid #7241ff;
+    border-radius:20px;
+    background-color: transparent;
+    font-family: var(--font-family);
+    font-size: 19px;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+}
+.textTitle{
+    @extend %paragraph;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.inputTitle{
+    font-family: var(--font-family);
+    font-size: 19px;
+    color: white;
+    margin-left: 20px;
+}
+.error{
+    font-family: var(--font-family);
+    color: rgb(255, 0, 238);
+    font-size: 19px; 
+    margin-left: 20px;  
+    margin-top: 5px;
+}

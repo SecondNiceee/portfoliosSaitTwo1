@@ -1,0 +1,12 @@
+@import url("../../../app//styles/_index.scss");
+.submit{
+    border: 2.25px solid #7241ff;
+    box-shadow: 0 0 7px 0 #74f;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    padding: 20px 40px;
+    width: 100%;
+    border-radius: 20px;
+}

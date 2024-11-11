@@ -1,4 +1,4 @@
-import { TPortfolio } from "./typePorfolio";
+import { TPortfolio } from "../models/typePorfolio";
 
 export const porfolios:TPortfolio[] = [
     {

@@ -1,0 +1,11 @@
+@import "../../../app/styles/index";
+.create{
+    display: flex;
+    .container{
+        @extend %container;
+        padding-top: 80px;
+        padding-bottom: 100px;
+        width: 100%;
+        justify-content: center;
+    }
+}

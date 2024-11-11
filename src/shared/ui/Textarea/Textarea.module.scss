@@ -1,0 +1,58 @@
+@import "../../../app/styles/mixins";
+.textArea{
+    
+    
+    background-color: transparent;
+    font-family: var(--font-family);
+    font-size: 19px;
+    color: white;
+
+    width: 100%;
+    min-height: 200px;
+    height: 200px;
+    border: none;
+    resize: none
+}
+
+
+.textAreaLabel{
+    @extend %paragraph;
+    color: white;
+}
+
+.textAreaContainer{
+    border: 2.25px solid #7241ff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius:20px;
+    gap: 20px;
+    position: relative;
+    padding: 20px;
+
+}
+.counter{
+    @extend %paragraph;
+    align-self: flex-end;
+}
+.hiddenArea{
+    // opacity: 0;
+    // z-index: -2;
+    user-select: none;
+    position: absolute;
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    left: 100%;
+    max-height: 200px;
+    height: 200px;
+    overflow-y: hidden;
+}
+
+.textAreaWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    overflow: hidden;
+}

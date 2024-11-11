@@ -1,0 +1,67 @@
+@import "../../../app/styles/mixins";
+.fileInput{
+    width: 100%;
+    border: 2.25px solid #7241ff;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.multipleFileInput{
+    display: grid;
+    padding: 10px;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.uploadLabel{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0.75px solid #664dff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        @extend %paragraph;
+        color: white;
+    }
+}
+.fileInputWrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+}
+.fileInputTitle{
+    margin-left: auto;
+    margin-right: auto;
+    @extend %paragraph;
+    color: white;
+}
+.image{
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+}
+.singleFileInput{
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    p{
+        @extend %paragraph;
+        color: white;
+    }
+}
+
+.input{
+    opacity: 0;
+    user-select: none;
+    position: absolute;
+}
+.singleFileInput{
+
+}

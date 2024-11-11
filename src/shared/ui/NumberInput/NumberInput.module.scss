@@ -1,0 +1,43 @@
+@import "../../../app/styles/mixins";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+.title{
+    @extend %paragraph;
+    color: white;
+}
+.numberInput{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+.numberImputWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 2.25px solid #7241ff;
+    padding: 10px 20px;
+}
+.buttonsBlock{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.textInput{
+    padding-right: 20px;
+    width: 100%;
+    @extend %paragraph;
+    color: white;
+    background-color: transparent;
+    border: none;
+}

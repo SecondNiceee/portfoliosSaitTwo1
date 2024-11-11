@@ -1,13 +1,17 @@
 import React, { CSSProperties, FC } from 'react';
 
-interface IImageProps{
-    imageName : string,
-    className? : string,
-    style? : CSSProperties
-}
-const Image:FC<IImageProps> = ({imageName , className = "", style = {}}) => {
+type IImageProps = {
+    src?: string;
+    imageName?: string;
+    className?: string;
+    style?: CSSProperties;
+} & (
+    | { src: string; imageName?: never}
+    | { src?: never; imageName: string}
+);
+const Image:FC<IImageProps> = ({imageName , className = "", style = {}, src}) => {
     return (
-        <img style={style} className={className} src={`images/${imageName}`} alt="" />
+        <img style={style} className={className} src={ src ?? `images/${imageName}`} alt="" />
     );
 };
 
