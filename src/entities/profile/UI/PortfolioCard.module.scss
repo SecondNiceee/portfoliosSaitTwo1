@@ -1,12 +1,50 @@
+@import "../../../app/styles/mixins";
 .portfolioCard{
     display: flex;
     flex-direction: column;
     padding: 15px;
     border-radius: 10px;
     border: 3px solid #7241ff;
+    .profileCardOptions{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        align-items: center;
+    }
+    .portfolioButton{
+        width: 100%;
+        border-radius: 10px;
+    }
     .portfolioCardContainer{
         display: flex;
         flex-direction: column;
         gap: 13px;
     }
+    .portfolioPreview{
+        object-fit: cover;
+        border-radius: 10px;
+        aspect-ratio: 1/1;
+    }
+    .viewsAndLikes{
+        display: flex;
+        justify-content: space-between;
+        max-width: 200px;
+        width: 100%;
+        align-items: center;
+        .counterImage{
+            width: 25px;
+            height: 25px;
+            
+        }
+        .conunterBlock{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .counterText{
+            @extend %paragraph;
+            color: white;
+        }
+    }
+    
 }

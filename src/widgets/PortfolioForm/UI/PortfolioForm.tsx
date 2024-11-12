@@ -1,5 +1,5 @@
 
-import { Controller, useForm } from 'react-hook-form';
+import {  useForm } from 'react-hook-form';
 import { TypePortfolio } from '../../../entities/profile/model/TypePortfolio';
 import Textarea from '../../../shared/ui/Textarea/Textarea';
 import { FC, useState } from 'react';
@@ -8,25 +8,26 @@ import TextInput from '../../../shared/ui/TextInput/TextInput';
 
 import Submit from '../../../shared/ui/Sumbit/Submit';
 import { FileInput } from '../../../shared/ui/FileInput';
-import NumberInput from '../../../shared/ui/NumberInput/NumberInput';
 import { ZodType } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ControllerComponent from './ControllerComponent';
+import CancelButton from './CancelButton';
 
-export type TypePortfolioWithoutPhotos = Omit<TypePortfolio, 'photos'>;  // Мы будет проверять все кроме фоток, у них будет личная и совсем дургая проверка 
+export type TypePortfolioWithoutPhotos = Omit<TypePortfolio, 'photos' | "id">;  // Мы будет проверять все кроме фоток, у них будет личная и совсем дургая проверка 
 
 
 interface IPortfolioForm{
-    portfolio : TypePortfolio,
-    submitFunction : (data:TypePortfolio) => void,
+    portfolio : Omit<TypePortfolio , "id">,
+    submitFunction : (data:Omit<TypePortfolio , "id">) => void,
     submitText : string,
-    zodSchema : ZodType<TypePortfolioWithoutPhotos>
+    zodSchema : ZodType<TypePortfolioWithoutPhotos>,
+    cancelButton? : boolean,
 }
 
 
 
 
-export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, submitText, zodSchema }) => {
+export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, submitText, zodSchema, cancelButton }) => {
     const {
         register,
         formState : {errors},
@@ -40,7 +41,7 @@ export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, su
     const [files, setFiles] = useState<File[]>(portfolio.photos)
 
     const onSubmit = handleSubmit((data) => {
-        const dataWithPhotos:TypePortfolio = {...data, photos : files}
+        const dataWithPhotos = {...data, photos : files}
         if (!files.length){
             setFileError({message : "Upload at least one file."})
         }
@@ -68,6 +69,7 @@ export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, su
             </div>
 
             <Submit value={submitText}  />
+            {cancelButton && <CancelButton />}
         </form>
     );
 };

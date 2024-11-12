@@ -12,7 +12,7 @@ type IImageProps = {
 );
 const Image:FC<IImageProps> = ({imageName ,onClick = () => {}, className = "", style = {}, src}) => {
     return (
-        <img onClick={onClick} style={style} className={className} src={ src ?? `images/${imageName}`} alt="" />
+        <img onClick={onClick} style={style} className={className} src={ src ?? `/images/${imageName}`} alt="" />
     );
 };
 

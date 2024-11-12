@@ -13,3 +13,17 @@
     border: 1px solid white;
     border-radius: 20px;
 }
+.cancel-button{
+    box-shadow: 0 0 7px 0 #74f;
+    font-family: var(--font-family);
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    padding: 20px 40px;
+    width: 100%;
+    border-radius: 20px;
+}
+.cancel-text{
+    color: white;
+}

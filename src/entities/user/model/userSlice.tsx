@@ -4,8 +4,11 @@ import { TypeUser } from "./TypeUser";
 interface IInitial {
     user : TypeUser | null
 }
+
+const user = sessionStorage.getItem("user")
+
 const initialState:IInitial = {
-    user : null
+    user : user ? JSON.parse(user) : null
 }
 
 const userSlice = createSlice({
@@ -13,11 +16,8 @@ const userSlice = createSlice({
     initialState : initialState,
     reducers : {
         setUser(state, action:PayloadAction<TypeUser>){
-            state.user = {
-                firstName : action.payload.firstName, 
-                email : action.payload.email,
-                password : action.payload.password
-            }
+            state.user = action.payload
+            sessionStorage.setItem('user', JSON.stringify(action.payload));
         }
     },
 

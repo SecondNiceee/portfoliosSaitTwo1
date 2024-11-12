@@ -5,7 +5,7 @@
     align-items: center;
     gap: 30px;
     width: 100%;
-    .portfolio-editor__header{
+    .portfolio-editor__header, .error-portfolio{
         @extend %section-header;
     }
 }

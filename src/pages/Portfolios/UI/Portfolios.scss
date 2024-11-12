@@ -51,10 +51,8 @@
         @extend %paragraph;
     }
     .portfolios__block{
-        display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 400px;
         margin-left: auto;
         margin-right: auto;
     }

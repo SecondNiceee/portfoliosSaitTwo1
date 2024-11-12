@@ -1,5 +1,6 @@
 export type TypePortfolio = {
-    title : string
+    id : number,
+    title : string,
     likes : number,
     description : string,
     photos : File[],

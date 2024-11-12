@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppSelector } from '../../../shared/models';
 import UserSection from './UserSection';
 import { PortfolioEfitor } from '../../../features/Portfolio/PortfolioEditor';

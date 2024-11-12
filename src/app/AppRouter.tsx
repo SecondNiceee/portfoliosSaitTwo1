@@ -5,6 +5,7 @@ import { LogIn, Registration } from '../pages/Form';
 import { Portfolios } from '../pages/Portfolios';
 import { Create } from '../pages/Create';
 import { ProtectedRoute } from '../shared/models';
+import { Edit } from '../pages/Edit';
 export const AppRouter = () => {
 
 
@@ -14,6 +15,7 @@ export const AppRouter = () => {
       <Route element = {<BaseLayout/>} >
         <Route element = {<Home/>} path='/' />
         <Route element = {<Portfolios/>} path='/portfolios' />
+        <Route element = {<Edit/>} path='/portfolios/:id/edit' />
         <Route element = {<Create/>} path='/create' />
         <Route element = {<ProtectedRoute isUser = {false} />}>
           <Route path='/registration' element = {<Registration/>} />
