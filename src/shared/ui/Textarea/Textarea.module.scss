@@ -48,6 +48,14 @@
     height: 200px;
     overflow-y: hidden;
 }
+.error{
+    font-family: var(--font-family);
+    color: rgb(255, 0, 238);
+    font-size: 19px; 
+    margin-left: 20px;  
+    margin-top: 5px;
+    margin-right: auto;
+}
 
 .textAreaWrapper{
     display: flex;

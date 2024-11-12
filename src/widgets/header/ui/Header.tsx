@@ -8,6 +8,7 @@ import HeaderLogos from "./HeaderLogos";
 import HeaderAuth from "./HeaderAuth";
 import MenuHeaderLogos from "./MenuHeaderLogos";
 export const Header = () => {
+  console.log("Рендер хэдера")
   const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
   return (
     <>

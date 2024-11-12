@@ -1,19 +1,9 @@
-import React from 'react';
-import LogButton from '../../../shared/ui/LogButton/LogButton';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const NoPortfolios = () => {
-    const navigate = useNavigate()
-    const clickHandler = () => {
-        navigate("/create")
-    }
     return (
         <div className='no-portfolios'>
-            <p className='no-portfolios__text'>U have not portfolios</p>
-            <LogButton className='no-portfolios__button' onClick={clickHandler}>
-                <p>Create</p>
-            </LogButton>
-            
+            <p className='no-portfolios__text'>U have not portfolios. To create yout first portfollio, go to <Link className='create-link' to={"/create"}>create.</Link></p>           
         </div>
     );
 };

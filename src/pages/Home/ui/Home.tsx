@@ -6,6 +6,7 @@ import Portfolios from './sections/Portfolios';
 import Recent from './sections/Recent';
 import Reachable from './sections/Reachable';
 const Home = () => {
+    console.log("Привет это дом")
     return (
         <main className='Home'>
             <Idea />

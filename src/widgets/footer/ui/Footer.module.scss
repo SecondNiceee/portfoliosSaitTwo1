@@ -1,6 +1,7 @@
 @import "../../../app/styles/index";
 .footer{
     box-shadow: inset 0 3px 3px 0 #63e;
+    margin-top: auto;
     @media (max-width:480px) {
         box-shadow: none;
     }

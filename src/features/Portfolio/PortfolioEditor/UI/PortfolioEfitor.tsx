@@ -7,6 +7,7 @@ import { TypePortfolio } from '../../../../entities/profile/model/TypePortfolio'
 import { useAppDispatch } from '../../../../shared/models';
 import { addPortfolio } from '../../../../entities/profile/model/portfoliosSlice';
 import { useNavigate } from 'react-router';
+import { PortfolioSchema } from '../model/validation';
 
 
 interface IPortfolioEditor{
@@ -32,7 +33,7 @@ export const PortfolioEfitor:FC<IPortfolioEditor> = ({determiner}) => {
     return (
         <div className='portfolio-editor'>
             <header className='portfolio-editor__header'>{editorConfig[determiner].header}</header>
-            <PortfolioForm submitText={editorConfig[determiner].submitText} submitFunction={onSumbit} portfolio={portfolio} />
+            <PortfolioForm zodSchema={PortfolioSchema}  submitText={editorConfig[determiner].submitText} submitFunction={onSumbit} portfolio={portfolio} />
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import cl from "./BaseLayout.module.scss"
 import { Header} from '../../widgets/header/ui/Header';
 import { Footer } from '../../widgets/footer';
@@ -12,7 +12,6 @@ export const BaseLayout:FC<ILayout> = ({onlyTop = false}) => {
             <Header />
             <Outlet />
             {!onlyTop && <Footer />}
-            
         </div>
     );
 };

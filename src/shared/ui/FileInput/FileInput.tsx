@@ -8,12 +8,16 @@ interface IFileInput {
   files: File[];
   maxLength: number;
   title: string;
+  error : null | {message : string};
+  setError : React.Dispatch<SetStateAction<null | {message : string}>>
 }
 export const FileInput: FC<IFileInput> = ({
   files,
   maxLength,
   setFiles,
   title,
+  error,
+  setError
 }) => {
   const changeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     if (e.target.files) {
@@ -24,6 +28,9 @@ export const FileInput: FC<IFileInput> = ({
           maxLength - files.length
         ),
       ]);
+      if (error && e.target.files.length){
+          setError(null)
+      }
     }
   };
 
@@ -35,12 +42,20 @@ export const FileInput: FC<IFileInput> = ({
     };
   }, [files]);
 
+  const deleteFile = (index:number) => {
+    const newFileArray = files.filter((e,i) => i !== index)
+    if (!newFileArray.length){
+        setError({message : "Upload at least one file."})
+    }
+    setFiles(files.filter((e,i) => i !== index))
+  }
+
   return (
     <div className={cl.fileInputWrapper}>
       <p className={cl.fileInputTitle}>{title}</p>
       <div className={cl.fileInput}>
         {files.length ? (
-          <MultipleFileInput files={files} />
+          <MultipleFileInput deleteFiles={deleteFile} files={files} />
         ) : (
           <SingleFileInput />
         )}
@@ -55,6 +70,7 @@ export const FileInput: FC<IFileInput> = ({
           type="file"
         />
       </div>
+      {error && <p className={cl.error}>{error.message}</p>}
     </div>
   );
 };

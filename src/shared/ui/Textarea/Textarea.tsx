@@ -34,7 +34,7 @@ export default function Textarea<T extends FieldValues>({error, name, register, 
         <div className={cl.textAreaWrapper}>
 
             <label className={cl.textAreaLabel} htmlFor={name}>{title}</label>
-            <div className={cl.textAreaContainer}>
+            <div style={error && {border : "1px solid rgb(255, 0, 238)"}} className={cl.textAreaContainer}>
 
             <textarea ref={hiddenRef} value={value} className={`${cl.hiddenArea} ${cl.textArea}`}  />
                 <textarea  maxLength={maxLength} className={cl.textArea} {...rest} ref={valueRef}  name={name} id={name} />

@@ -20,7 +20,6 @@ export const useLoginSubmit = ({handleSubmit, setError} :IUserLoginSubmit ) => {
         }
         else{
             dispatch(setUser({firstName : data.firstName, password : data.password, email : data.email}))
-            navigate(-1)
         }
     })
 

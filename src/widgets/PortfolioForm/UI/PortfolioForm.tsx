@@ -9,36 +9,47 @@ import TextInput from '../../../shared/ui/TextInput/TextInput';
 import Submit from '../../../shared/ui/Sumbit/Submit';
 import { FileInput } from '../../../shared/ui/FileInput';
 import NumberInput from '../../../shared/ui/NumberInput/NumberInput';
+import { ZodType } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import ControllerComponent from './ControllerComponent';
+
+export type TypePortfolioWithoutPhotos = Omit<TypePortfolio, 'photos'>;  // Мы будет проверять все кроме фоток, у них будет личная и совсем дургая проверка 
+
 
 interface IPortfolioForm{
     portfolio : TypePortfolio,
     submitFunction : (data:TypePortfolio) => void,
-    submitText : string
+    submitText : string,
+    zodSchema : ZodType<TypePortfolioWithoutPhotos>
 }
 
-type TypePortfolioWithoutPhotos = Omit<TypePortfolio, 'photos'>;
 
 
 
-export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, submitText }) => {
+export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, submitText, zodSchema }) => {
     const {
         register,
         formState : {errors},
         control,
         handleSubmit,
-        getValues
     } = useForm<TypePortfolioWithoutPhotos>(
-        {defaultValues :  portfolio})
+        {defaultValues :  portfolio, resolver : zodResolver(zodSchema)})
 
-    const [fileError , setFileError] = useState<boolean>(false)
+    const [fileError , setFileError] = useState<null | {message : string} >(null)
 
     const [files, setFiles] = useState<File[]>(portfolio.photos)
 
     const onSubmit = handleSubmit((data) => {
         const dataWithPhotos:TypePortfolio = {...data, photos : files}
-        submitFunction(dataWithPhotos)
+        if (!files.length){
+            setFileError({message : "Upload at least one file."})
+        }
+        else{
+            
+            submitFunction(dataWithPhotos)
+        }
     })
-    
+
     return (
         <form onSubmit={onSubmit} className='form' action="">
             <div className="form-wrapper">
@@ -47,21 +58,12 @@ export const PortfolioForm:FC<IPortfolioForm> = ({portfolio , submitFunction, su
 
                 <Textarea maxLength={700} control={control} error={errors.description} name='description' register={register} title='Portfolio description'  />
 
-                <FileInput title='Upload ur files (max 3).' setFiles={setFiles} files={files} maxLength={3} />
+                <FileInput error={fileError} setError={setFileError} title='Upload ur files (max 3).' setFiles={setFiles} files={files} maxLength={3} />
 
-                <Controller name='likes' control={control} render={({field}) => {
-                    const {name, value, onChange} = field
-                    return (
-                        <NumberInput title='likes' name={name} onChange={onChange} value={value} />
-                    )
-                }} />
+                <ControllerComponent control={control} name={"likes"} />
+                
+                <ControllerComponent control={control} name='views' />
 
-                <Controller name='views' control={control} render={({field}) => {
-                    const {name, value, onChange} = field
-                    return (
-                        <NumberInput title='views' name={name} onChange={onChange} value={value} />
-                    )
-                }} />
 
             </div>
 

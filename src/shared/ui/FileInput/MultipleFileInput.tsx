@@ -3,13 +3,15 @@ import cl from "./FileInput.module.scss";
 import Image from '../Image';
 
 interface IMultipleFileInput {
-    files : File[]
+    files : File[],
+    deleteFiles : (index : number) => void
 }
-const MultipleFileInput:FC<IMultipleFileInput> = ({files}) => {
+const MultipleFileInput:FC<IMultipleFileInput> = ({files, deleteFiles}) => {
     return (
         <div className={cl.multipleFileInput}>
-            {files.map( (e) => {
-                return <div className={cl.imageBlock}>
+            {files.map( (e, i) => {
+                return <div key={i} className={cl.imageBlock}>
+                    <Image onClick={() => deleteFiles(i)} className={cl.redCross} imageName='redCross.svg' />
                     <Image className={cl.image} src={URL.createObjectURL(e)} />
                 </div>
             } )}

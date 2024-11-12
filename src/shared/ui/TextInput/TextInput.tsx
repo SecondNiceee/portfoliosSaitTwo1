@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import cl from "./TextInput.module.scss"
 import {  FieldError, FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
@@ -10,7 +11,7 @@ interface ITextInput<T extends FieldValues>{
     maxLength? : number,
     title? : string
 }
-export default function TextInput<T extends FieldValues>({name, type, register, error, maxLength, title} : ITextInput<T>){
+function TextInput<T extends FieldValues>({name, type, register, error, maxLength, title} : ITextInput<T>){
     return (    
         <label className={cl.label} htmlFor={name} >
             {/* <p className={cl.inputTitle}>{name}</p> */}
@@ -20,4 +21,5 @@ export default function TextInput<T extends FieldValues>({name, type, register, 
         </label>
     );
 };
+export default React.memo(TextInput) as <T extends FieldValues>(props: ITextInput<T>) => React.ReactElement;
 

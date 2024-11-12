@@ -17,7 +17,6 @@ export const useRegistrationSubmit = ({handleSubmit} :IUseSubmit ) => {
     const navigate = useNavigate()
     return  handleSubmit((data) => {    
         dispatch(setUser({firstName : data.firstName, password : data.password, email : data.email}))
-        navigate(-1)
     })
 
 };

@@ -1,4 +1,4 @@
-import {  createBrowserRouter, Route, Routes } from 'react-router-dom';
+import {  createBrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Home } from '../pages/Home';
 import { BaseLayout } from './layout';
 import { LogIn, Registration } from '../pages/Form';
@@ -6,6 +6,8 @@ import { Portfolios } from '../pages/Portfolios';
 import { Create } from '../pages/Create';
 import { ProtectedRoute } from '../shared/models';
 export const AppRouter = () => {
+
+
   return (
     <>
     <Routes>
