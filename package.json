@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "react-app-rewired": "^2.2.1",
-    "scss-reset": "^1.4.2"
-  }
+    "scss-reset": "^1.4.2",
+    "@babel/plugin-proposal-private-property-in-object" : "~7.21.11"
+}
 }
