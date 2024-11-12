@@ -3,12 +3,13 @@ import Image from "../../../../shared/ui/Image";
 import StarText from "../../../../shared/ui/StarText/StarText";
 import LogButton from "../../../../shared/ui/LogButton/LogButton";
 import ProcessLogButton from "../components/ProcessLogButton";
+import Reveal from "../../../../shared/ui/Reveal/Reveal";
 
 const Process = () => {
   return (
     <section className="process">
       
-      <div className="container">
+      <Reveal className="container">
         <header className="process__header">
           <h2 className="process__header-title">5 minute set-up process</h2>
           <p className="process__header-description">
@@ -39,7 +40,7 @@ const Process = () => {
 
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

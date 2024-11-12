@@ -1,16 +1,13 @@
-import React, { useCallback, useEffect, useRef } from 'react';
 import Image from '../../../../shared/ui/Image';
-import LogButton from '../../../../shared/ui/LogButton/LogButton';
+import Reveal from '../../../../shared/ui/Reveal/Reveal';
 import StarText from '../../../../shared/ui/StarText/StarText';
 import IdeaButtons from '../components/IdeaButtons';
 
 const Idea = () => {
 
-
-
     return (
         <section className='idea'>
-            <div className="container">
+            <Reveal className="container">
                 <div className="idea__text-block">
                     <div className='idea__welcome'>
                         <StarText>
@@ -26,7 +23,7 @@ const Idea = () => {
                     <Image className='idea__stars' imageName='stars.svg' />
                     <Image className='idea__image' imageName='ideaHeader.png' />
                 </div>
-            </div>
+            </Reveal>
         </section>
     );
 };

@@ -1,10 +1,11 @@
 import React from 'react';
 import User from '../components/User';
+import Reveal from '../../../../shared/ui/Reveal/Reveal';
 
 const Recent = () => {
     return (
         <section className='recent'>
-            <div className="container">
+            <Reveal className="container">
                 <header className="recent__header">
                 Recent Users
                 </header>
@@ -16,7 +17,7 @@ const Recent = () => {
                         )
                     } )}
                 </div>
-            </div>
+            </Reveal>
         </section>
     );
 };

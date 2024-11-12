@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from '../../../../shared/ui/Image';
 import { incons } from '../../config';
+import Reveal from '../../../../shared/ui/Reveal/Reveal';
 
 const Reachable = () => {
     return (
         <section className='reachable'>
-            <div className="container">
+            <Reveal className="container">
                 <div className="reachable__left-part">
 
                     <div className="reachable__text-block">
@@ -36,7 +37,7 @@ const Reachable = () => {
 
                 </div>
                 <Image imageName='robot.png' className='reachable__image' />
-            </div>
+            </Reveal>
         </section>
     );
 };
