@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Submit from '../../../shared/ui/Sumbit/Submit';
 import TextInput from '../../../shared/ui/TextInput/TextInput';
-import { loginFields, registerFields } from '../config';
+import { loginFields } from '../config';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { UserLoginSchema } from '../model/validation';

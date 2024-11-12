@@ -8,9 +8,15 @@
 }
 .multipleFileInput{
     display: grid;
-    padding: 10px;
-    gap: 30px;
+    gap: clamp(0.625rem, -0.567rem + 3.31vw, 1.875rem);
     grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    @media (max-width:576px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width:360px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .uploadLabel{
@@ -53,8 +59,8 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    top: 20px;
-    right: 20px;
+    top: 4%;
+    right: 5%;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 50%;
 }

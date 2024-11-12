@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import cl from "./Header.module.scss";
-import { menuNavLinks } from "../../../shared/consts";
-import { Link } from "react-router-dom";
+
 import Burger from "./Burger";
-import LogButton from "../../../shared/ui/LogButton/LogButton";
-import HeaderLogos from "./HeaderLogos";
 import HeaderAuth from "./HeaderAuth";
 import MenuHeaderLogos from "./MenuHeaderLogos";
+import NavLinks from "./NavLinks";
 export const Header = () => {
-  console.log("Рендер хэдера")
   const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
   return (
     <>
@@ -21,13 +18,7 @@ export const Header = () => {
             <Burger isOpen={burgerOpen} setOpen={setBurgerOpen} />
           </div>
           <nav className={cl.headerNav}>
-            {menuNavLinks.map((e, i) => {
-              return (
-                <Link to={e.link} key={i}>
-                  {e.title}
-                </Link>
-              );
-            })}
+          <NavLinks />
           </nav>
           
         <HeaderAuth />
@@ -36,13 +27,7 @@ export const Header = () => {
 
       <div data-show={burgerOpen ? "show" : ""} className={cl.burgerMenu}>
         <nav className={[cl.headerNav, cl.burgerMenuNav].join(' ')}>
-          {menuNavLinks.map((e, i) => {
-            return (
-              <Link to={e.link} key={i}>
-                {e.title}
-              </Link>
-            );
-          })}
+        <NavLinks />
         </nav>
 
         

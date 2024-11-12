@@ -1,4 +1,3 @@
-import React from 'react';
 import cl from "./PortfolioList.module.scss"
 import { useAppSelector } from '../../../shared/models';
 import { PortfolioCard } from '../../../entities/profile';

@@ -1,6 +1,5 @@
 import React, { FC, SetStateAction, useEffect } from "react";
 import cl from "./FileInput.module.scss";
-import Image from "../Image";
 import MultipleFileInput from "./MultipleFileInput";
 import SingleFileInput from "./SingleFileInput";
 interface IFileInput {

@@ -3,7 +3,6 @@ import { TLoginFormValues } from "../UI/SignIn";
 import { useAppDispatch } from "../../../shared/models";
 import { setUser } from "../../../entities/user";
 import { SetStateAction } from "react";
-import { useNavigate } from "react-router";
 
 interface IUserLoginSubmit {
     handleSubmit : UseFormHandleSubmit<TLoginFormValues, undefined>,
@@ -13,7 +12,6 @@ interface IUserLoginSubmit {
 export const useLoginSubmit = ({handleSubmit, setError} :IUserLoginSubmit ) => {
 
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
     return  handleSubmit((data) => {    
         if (data.password !== "123456" || data.email !== "col@gmail.com"){
             setError(true)

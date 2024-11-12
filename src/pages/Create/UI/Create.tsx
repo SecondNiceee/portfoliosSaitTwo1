@@ -1,4 +1,3 @@
-import { PortfolioEfitor } from '../../../features/Portfolio/PortfolioEditor';
 import CreateChecker from './CreateChecker';
 import "./styles.scss";
 

@@ -3,6 +3,9 @@
 a{
     text-decoration: none
 }
+.shine{
+
+}
 .header{
     .headerContainer{
         @extend %container;
@@ -123,13 +126,17 @@ a{
 
 }
 
-     
 .headerNav{
+
     display: flex;
     align-items: center;
     gap:30px;
     a{
-        @extend %paragraph !optional;
+        @extend %paragraph;
+        transition: 0.5s;
+    }
+    .shine{
+        color: white;
     }
     @media (max-width:768px) {
         display: none;

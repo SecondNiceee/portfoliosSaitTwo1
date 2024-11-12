@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useAppSelector } from '../../../../shared/models';
 
 const usePortfolioById = ({id} : {id:number}) => {
@@ -6,7 +6,7 @@ const usePortfolioById = ({id} : {id:number}) => {
     const portfolioById = useMemo( () => {
         return portfolios.find((e) => e.id === id)
     }  ,[ portfolios, id] )
-    
+
     return portfolioById
 
 };

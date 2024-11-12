@@ -4,7 +4,7 @@
     border-radius:20px;
     background-color: transparent;
     font-family: var(--font-family);
-    font-size: 19px;
+    font-size: clamp(0.75rem, 0.558rem + 0.85vw, 1.188rem);
     color: white;
     padding: 10px 20px;
     width: 100%;

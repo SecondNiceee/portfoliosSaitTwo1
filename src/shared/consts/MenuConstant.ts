@@ -4,5 +4,5 @@ export const menuNavLinks:TMenuNav[] = [
     {title : "Home", link : "/"},
     {title : "Portfolios", link : "/portfolios"},
     {title : "Create", link : "/create"},
-    {title : "About Us", link : "/aboutus"}
+    {title : "Click me", link : "/clickme"}
 ]

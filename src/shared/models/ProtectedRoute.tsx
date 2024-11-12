@@ -1,7 +1,6 @@
-import { FC, useContext, useEffect } from 'react';
-import { Navigate, Outlet, replace, useLocation, useNavigate } from 'react-router';
+import { FC,  useEffect } from 'react';
+import {  Outlet, useNavigate } from 'react-router';
 import { useAppSelector } from './reduxHooks';
-import RouteHistoryContext from '../../app/context/RouteHistoryContext';
 import useHistory from './useHistory';
 
 interface IProtectedRoute{
@@ -16,13 +15,18 @@ export const ProtectedRoute:FC<IProtectedRoute> = ({ isUser}) => {
     useEffect( () => {
       if ( (user && !isUser) || (!user && isUser) ){
         if (routeHistory.length > 1){
-          navigate(routeHistory[routeHistory.length-2], {replace : true})
+          if (routeHistory[routeHistory.length-2] === "/login" || routeHistory[routeHistory.length-2] === "/registration"){
+            navigate("/", {replace:true})
+          }
+          else{
+            navigate(routeHistory[routeHistory.length-2], {replace : true})
+          }
         }
         else{
           navigate("/" , {replace : true} )
         }
       }
-    } , [user] )
+    } , [user, navigate, routeHistory, isUser] )
   
     return <Outlet />;
   };

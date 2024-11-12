@@ -2,8 +2,6 @@ import React, { FC } from 'react';
 import { TypePortfolio } from '../model/TypePortfolio';
 import cl from "./PortfolioCard.module.scss"
 import Image from '../../../shared/ui/Image';
-import LogButton from '../../../shared/ui/LogButton/LogButton';
-import { useNavigate } from 'react-router';
 import ViewsAndLikes from './ViewsAndLikes';
 import PortfolioButtons from './PortfolioButtons';
 
