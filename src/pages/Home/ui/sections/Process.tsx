@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../../../../shared/ui/Image";
 import StarText from "../../../../shared/ui/StarText/StarText";
 import LogButton from "../../../../shared/ui/LogButton/LogButton";
+import ProcessLogButton from "../components/ProcessLogButton";
 
 const Process = () => {
   return (
@@ -32,9 +33,7 @@ const Process = () => {
                     you like, and Grab a special link to share your portfolio with
                     everyone. Boost your online presence the easy way!
                 </p>
-                <LogButton className="process__log-button" isShine={true}>
-                    <p>Complete Your Profile</p>
-                </LogButton>
+                  <ProcessLogButton />
                 </div>
             </div>
 

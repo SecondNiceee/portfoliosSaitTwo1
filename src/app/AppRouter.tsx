@@ -1,7 +1,7 @@
 import {  Route, Routes } from 'react-router-dom';
 import { BaseLayout } from './layout';
 import { ProtectedRoute } from '../shared/models';
-import { LazyRoute } from './LazyRoute';
+import { LazyRoute } from '../shared/models/LazyRoute';
 import { lazy } from 'react';
 
 

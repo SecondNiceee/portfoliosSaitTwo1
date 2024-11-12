@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cl from "./Header.module.scss";
 
 import Burger from "./Burger";
 import HeaderAuth from "./HeaderAuth";
 import MenuHeaderLogos from "./MenuHeaderLogos";
-import NavLinks from "./NavLinks";
+import { useLocation } from "react-router";
+import Nav from "./Nav";
 export const Header = () => {
+  const location = useLocation()
   const [burgerOpen, setBurgerOpen] = useState<boolean>(false);
+  useEffect( () => {
+    setBurgerOpen(false)
+  } , [location.pathname] )
+
   return (
     <>
       <header className={cl.header}>
@@ -17,22 +23,16 @@ export const Header = () => {
             </p>
             <Burger isOpen={burgerOpen} setOpen={setBurgerOpen} />
           </div>
-          <nav className={cl.headerNav}>
-          <NavLinks />
-          </nav>
+          
+          <Nav />
           
         <HeaderAuth />
         </div>
       </header>
 
       <div data-show={burgerOpen ? "show" : ""} className={cl.burgerMenu}>
-        <nav className={[cl.headerNav, cl.burgerMenuNav].join(' ')}>
-        <NavLinks />
-        </nav>
-
-        
+        <Nav className={cl.burgerMenuNav} />
         <MenuHeaderLogos />
-
       </div>
     </>
   );

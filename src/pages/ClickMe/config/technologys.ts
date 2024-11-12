@@ -4,6 +4,6 @@ export const technologys:string[] = ["React + Ts",
     "Context Api",
     "React Hook Form + zod",
     "React lazy",
-    "FSD Архитектура (немного модифицированная, но я могу писать на чистой)",
+    "FSD Архитектура",
     "Сайт адаптирован"
 ]
