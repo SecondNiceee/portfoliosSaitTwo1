@@ -20,7 +20,7 @@ export const portfoliosSlice = createSlice({
         changePortfolio : (state , action : PayloadAction<{id : number, portfolio : Omit<TypePortfolio, "id">}>) => {
             state.portfolios = state.portfolios.map( (e) => {
                 if (e.id === action.payload.id){
-                    return {...action.payload.portfolio, id : id}
+                    return {...action.payload.portfolio, id : action.payload.id}
                 }
                 return e
             } )

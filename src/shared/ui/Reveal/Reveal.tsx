@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useRef } from "react";
+import  { FC, ReactNode, useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 interface IReveal {
@@ -15,7 +15,7 @@ const Reveal:FC<IReveal> = ({ children, className = "" }) => {
         if (isInView){
             mainControls.start("visible")
         }
-    }, [isInView] )
+    }, [isInView, mainControls] )
   return (
     <motion.div
       variants={{

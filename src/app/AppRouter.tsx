@@ -16,11 +16,11 @@ const LogIn = lazy(() => import('../pages/Form').then(module => ({ default: modu
 
 export const AppRouter = () => {
 
-
   return (
     <>
     <Routes>
       <Route element = {<BaseLayout/>} >
+
         <Route element = {<LazyRoute Comp = {<Home/>} />} path='/' />
 
         <Route element = {<LazyRoute Comp = {<Portfolios/>}  /> } path='/portfolios' />
@@ -30,8 +30,8 @@ export const AppRouter = () => {
         <Route element = {<LazyRoute Comp = {<Create/>}  /> } path='/create' />
 
         <Route element = {<LazyRoute Comp = {<ClickMe/>}  /> } path='/clickme' />
-        
-        <Route element = {<ProtectedRoute isUser = {false} />}>
+
+        <Route element = {<ProtectedRoute isUser = {false}  />}>
 
           <Route element = {<LazyRoute Comp = {<Registration/>}  /> } path='/registration' />
 

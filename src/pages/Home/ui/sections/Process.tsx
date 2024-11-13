@@ -1,7 +1,6 @@
-import React from "react";
+
 import Image from "../../../../shared/ui/Image";
 import StarText from "../../../../shared/ui/StarText/StarText";
-import LogButton from "../../../../shared/ui/LogButton/LogButton";
 import ProcessLogButton from "../components/ProcessLogButton";
 import Reveal from "../../../../shared/ui/Reveal/Reveal";
 

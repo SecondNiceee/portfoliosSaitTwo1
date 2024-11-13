@@ -9,4 +9,7 @@
     &[data-shine = "shine"]{
         box-shadow: 0 0 7px 0 #74f;
     }
+    p{
+        user-select: none;
+    }
 }

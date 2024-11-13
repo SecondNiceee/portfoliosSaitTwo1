@@ -19,7 +19,7 @@ const PortfolioButtons: FC<IPortfolioButton> = ({ portfolio }) => {
     <>
       <LogButton
         onClick={() => {
-          navigate(`/edit/${portfolio.id}`, {preventScrollReset : true});
+          navigate(`/edit/${portfolio.id}`, {preventScrollReset : false });
         }}
         className={cl.portfolioButton}
       >

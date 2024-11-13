@@ -10,8 +10,9 @@ interface IProtectedRoute{
 export const ProtectedRoute:FC<IProtectedRoute> = ({ isUser}) => {
     const user = useAppSelector(state => state.userSlice.user)
     const routeHistory = useHistory()
+
     const navigate = useNavigate()
-    console.log(routeHistory)
+
     useEffect( () => {
       if ( (user && !isUser) || (!user && isUser) ){
         if (routeHistory.length > 1){
